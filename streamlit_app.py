@@ -23,14 +23,14 @@ def main():
 
     try:
         # Đường dẫn tới file ảnh
-        image = Image.open('Thiệp 2011.png') 
+        image = Image.open('Thiệp 2011-new.png') 
 
         # 3. Hiển thị hình ảnh với use_column_width=True
         # Streamlit sẽ điều chỉnh hình ảnh để lấp đầy chiều rộng của cột.
         st.image(image, caption="Happy Teachers' Day 20/11", use_column_width=True)
 
     except FileNotFoundError:
-        st.error("Lỗi: Không tìm thấy file hình ảnh 'Thiệp 2011.png'.")
+        st.error("Lỗi: Không tìm thấy file hình ảnh 'Thiệp 2011-new.png'.")
     except Exception as e:
         st.error(f"Đã xảy ra lỗi: {e}")
 
