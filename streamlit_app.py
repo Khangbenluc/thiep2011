@@ -12,7 +12,7 @@ def main():
         # Hiển thị hình ảnh
         # Sử dụng caption để cung cấp mô tả ngắn
         # Dùng use_column_width=True để hình ảnh điều chỉnh theo chiều rộng của cột
-        st.image(image, caption='Happy Teachers' Day 20/11 ', use_column_width=True)
+        st.image(image, caption="Happy Teachers' Day 20/11 ", use_column_width=True)
 
     except FileNotFoundError:
         st.error("Lỗi: Không tìm thấy file hình ảnh 'Thiệp 2011.png'. Vui lòng đảm bảo file nằm cùng thư mục với app.py.")
