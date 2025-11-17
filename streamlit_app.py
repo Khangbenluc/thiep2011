@@ -2,20 +2,35 @@ import streamlit as st
 from PIL import Image
 
 def main():
-    # Cài đặt tiêu đề trang web
-    st.set_page_config(page_title="Thiệp 20/11 online - 20/11 online card", layout="wide")
+    # 1. Cài đặt layout rộng (wide)
+    st.set_page_config(page_title="Thiệp ngày nhà giáo - Teachers' day card", layout="wide")
 
-    # Mở hình ảnh. Thay 'Thiệp 2011.jpg' bằng đường dẫn đến file của bạn nếu cần.
+    # 2. Sử dụng CSS tùy chỉnh để loại bỏ padding mặc định
+    st.markdown(
+        """
+        <style>
+        .css-usf63n {
+            padding: 0px; /* Loại bỏ padding trên và dưới của main content */
+        }
+        .css-18e3th9 {
+            padding-top: 0rem; 
+            padding-bottom: 0rem;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
     try:
-        image = Image.open('Thiệp 2011.png')
+        # Đường dẫn tới file ảnh
+        image = Image.open('Thiệp 2011.png') 
 
-        # Hiển thị hình ảnh
-        # Sử dụng caption để cung cấp mô tả ngắn
-        # Dùng use_column_width=True để hình ảnh điều chỉnh theo chiều rộng của cột
-        st.image(image, caption="Happy Teachers' Day 20/11 ", use_column_width=True)
+        # 3. Hiển thị hình ảnh với use_column_width=True
+        # Streamlit sẽ điều chỉnh hình ảnh để lấp đầy chiều rộng của cột.
+        st.image(image, caption="Happy Teachers' Day 20/11", use_column_width=True)
 
     except FileNotFoundError:
-        st.error("Lỗi: Không tìm thấy file hình ảnh 'Thiệp 2011.png'. Vui lòng đảm bảo file nằm cùng thư mục với app.py.")
+        st.error("Lỗi: Không tìm thấy file hình ảnh 'Thiệp 2011.png'.")
     except Exception as e:
         st.error(f"Đã xảy ra lỗi: {e}")
 
